@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://skirental.io/gt/webservice">
+    <soapenv:Header>
+        <gs:apiKey>Y7Jv3Dq4M1fN8K2sL5xZ9R0wQ6uP4eB7</gs:apiKey>
+    </soapenv:Header>
+    <soapenv:Body>
+        <gs:getStockRequest/>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,127 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://skirental.io/gt/webservice"
+           targetNamespace="http://skirental.io/gt/webservice" elementFormDefault="qualified">
+
+    <xs:element name="getMaterialByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getMaterialByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="material" type="tns:material"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="getStockRequest">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getStockResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="stock" type="tns:material" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="prepareRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="transactionId" type="xs:string"/>
+                <xs:element name="orders" type="tns:order" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="prepareResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="vote" type="tns:vote"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="bookMaterialRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="transactionId" type="xs:string"/>
+                <xs:element name="decision" type="tns:protocolMessage"/>
+                <xs:element name="orders" type="tns:order" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="bookMaterialResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ack" type="tns:protocolMessage"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="rollBackRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="transactionId" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="material">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="productType" type="tns:productType"/>
+            <xs:element name="price" type="xs:float"/>
+            <xs:element name="availableAmount" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="productType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="skis"/>
+            <xs:enumeration value="snowboard"/>
+            <xs:enumeration value="skiboots"/>
+            <xs:enumeration value="snowboardboots"/>
+            <xs:enumeration value="skipoles"/>
+            <xs:enumeration value="helmet"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="order">
+        <xs:sequence>
+            <xs:element name="stockId" type="xs:int"/>
+            <xs:element name="amount" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:simpleType name="protocolMessage">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="vote_commit"/>
+            <xs:enumeration value="vote_abort"/>
+            <xs:enumeration value="global_commit"/>
+            <xs:enumeration value="global_abort"/>
+            <xs:enumeration value="acknowledge"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="vote">
+        <xs:sequence>
+            <xs:element name="vote" type="tns:protocolMessage"/>
+            <xs:element name="error" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

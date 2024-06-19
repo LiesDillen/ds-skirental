@@ -1,0 +1,12 @@
+2024-06-15 22:59:38.958  INFO 10515 --- [main] c.e.springsoap.SpringSoapApplication     : Starting SpringSoapApplication using Java 17.0.11 on liesvm with PID 10515 (/home/lies/Documents/dapp2024/ds_final_project/suppliers/ski_rental/target/classes started by lies in /home/lies/Documents/dapp2024/ds_final_project/suppliers/ski_rental)
+2024-06-15 22:59:38.964  INFO 10515 --- [main] c.e.springsoap.SpringSoapApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-06-15 22:59:39.447  INFO 10515 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'webServiceConfig' of type [com.example.springsoap.WebServiceConfig$$EnhancerBySpringCGLIB$$f6636295] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-06-15 22:59:39.447  INFO 10515 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$bbf5e807] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-06-15 22:59:39.471  INFO 10515 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-15 22:59:39.676  INFO 10515 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-15 22:59:39.682  INFO 10515 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-15 22:59:39.682  INFO 10515 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-06-15 22:59:39.722  INFO 10515 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-15 22:59:39.723  INFO 10515 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 693 ms
+2024-06-15 22:59:40.017  INFO 10515 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-15 22:59:40.023  INFO 10515 --- [main] c.e.springsoap.SpringSoapApplication     : Started SpringSoapApplication in 1.261 seconds (JVM running for 1.507)
